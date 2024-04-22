@@ -1,17 +1,20 @@
 # ROCK-PAPER-SCISSORS
+## About
+Server for online rock-paper scissors competition. Starts on default telnet port 23
 
-## Requirements
-
-JDK 21+
 
 ## How to start
 
-### With IntelliJ IDE:
+### Requirements
+
+JDK 21+
+
+### Start via IntelliJ IDE:
 
 Run `ru.korobtsov.server.Application#main` method OR stored Application configuration
 in `.idea/runConfigurations/Application.xml`
 
-### With gradle wrapper:
+### Start via  gradle wrapper:
 
 ``` shell
 ./gradlew bootRun
