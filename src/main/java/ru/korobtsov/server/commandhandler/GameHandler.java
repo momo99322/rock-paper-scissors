@@ -1,4 +1,4 @@
-package ru.korobtsov.server.handler;
+package ru.korobtsov.server.commandhandler;
 
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
@@ -17,8 +17,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 
-import static ru.korobtsov.server.handler.GameHandler.Move.*;
-import static ru.korobtsov.server.handler.TransitionType.NO_TRANSITION;
+import static ru.korobtsov.server.commandhandler.GameHandler.Move.*;
 
 @Slf4j
 @Component
@@ -58,7 +57,7 @@ public class GameHandler extends CancelableCommandHandler {
                     case LOOSER ->
                             HandlingResult.handledSuccessfully("You loose :( %s".formatted(movesString), TransitionType.NEXT);
                     case DRAW ->
-                            HandlingResult.handledSuccessfully("Draw, one more round! %s".formatted(movesString), NO_TRANSITION);
+                            HandlingResult.handledSuccessfully("Draw, one more round! %s".formatted(movesString), TransitionType.NO_TRANSITION);
                 };
             } catch (InterruptedException e) {
                 return HandlingResult.handledSuccessfully("Game was cancelled", TransitionType.PREV);

@@ -1,4 +1,4 @@
-package ru.korobtsov.server.handler;
+package ru.korobtsov.server.commandhandler;
 
 public enum TransitionType {
     NO_TRANSITION,

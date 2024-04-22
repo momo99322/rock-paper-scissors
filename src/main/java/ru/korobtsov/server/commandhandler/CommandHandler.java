@@ -1,4 +1,4 @@
-package ru.korobtsov.server.handler;
+package ru.korobtsov.server.commandhandler;
 
 import com.google.common.util.concurrent.ListenableFuture;
 import org.jetbrains.annotations.NotNull;

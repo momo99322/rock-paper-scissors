@@ -9,7 +9,7 @@ import io.netty.handler.codec.string.StringEncoder;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import ru.korobtsov.server.context.GameContextFactory;
-import ru.korobtsov.server.handler.CommandHandlerManager;
+import ru.korobtsov.server.commandhandler.CommandHandlerManager;
 import ru.korobtsov.server.transport.handler.TelnetGameHandler;
 
 import java.util.concurrent.ExecutorService;

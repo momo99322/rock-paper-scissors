@@ -1,4 +1,4 @@
-package ru.korobtsov.server.handler;
+package ru.korobtsov.server.commandhandler;
 
 import lombok.Getter;
 import lombok.experimental.Accessors;

@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 import lombok.extern.slf4j.Slf4j;
-import ru.korobtsov.server.handler.TransitionType;
+import ru.korobtsov.server.commandhandler.TransitionType;
 import ru.korobtsov.server.stage.CloseStage;
 import ru.korobtsov.server.stage.InitStage;
 import ru.korobtsov.server.stage.Stage;

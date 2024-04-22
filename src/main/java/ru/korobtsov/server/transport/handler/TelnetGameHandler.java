@@ -13,8 +13,8 @@ import org.springframework.stereotype.Component;
 import ru.korobtsov.server.command.CommandType;
 import ru.korobtsov.server.context.GameContext;
 import ru.korobtsov.server.context.GameContextFactory;
-import ru.korobtsov.server.handler.CommandHandlerManager;
-import ru.korobtsov.server.handler.HandlingResult;
+import ru.korobtsov.server.commandhandler.CommandHandlerManager;
+import ru.korobtsov.server.commandhandler.HandlingResult;
 import ru.korobtsov.server.stage.StageType;
 
 import java.util.concurrent.ExecutorService;

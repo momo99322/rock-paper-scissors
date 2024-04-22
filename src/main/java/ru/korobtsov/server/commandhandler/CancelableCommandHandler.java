@@ -1,4 +1,4 @@
-package ru.korobtsov.server.handler;
+package ru.korobtsov.server.commandhandler;
 
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
@@ -9,8 +9,6 @@ import ru.korobtsov.server.context.GameContext;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
-
-import static ru.korobtsov.server.handler.TransitionType.NO_TRANSITION;
 
 public abstract class CancelableCommandHandler implements CommandHandler {
 
@@ -33,7 +31,7 @@ public abstract class CancelableCommandHandler implements CommandHandler {
                 if (tasks.containsKey(gameContext.nickname())) {
                     yield Futures.immediateFuture(HandlingResult.handledSuccessfully(
                             "Command '%s' is already in processing status".formatted(command.commandType().commandString()),
-                            NO_TRANSITION)
+                            TransitionType.NO_TRANSITION)
                     );
                 }
 
@@ -66,14 +64,14 @@ public abstract class CancelableCommandHandler implements CommandHandler {
 
         if (task == null) {
             return Futures.immediateFuture(
-                    HandlingResult.handledSuccessfully("Command is not executing", NO_TRANSITION)
+                    HandlingResult.handledSuccessfully("Command is not executing", TransitionType.NO_TRANSITION)
             );
         }
 
         task.cancel(true);
 
         return Futures.immediateFuture(
-                HandlingResult.handledSuccessfully("Command was cancelled", NO_TRANSITION)
+                HandlingResult.handledSuccessfully("Command was cancelled", TransitionType.NO_TRANSITION)
         );
     }
 }
